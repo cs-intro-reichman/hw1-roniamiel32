@@ -8,13 +8,14 @@ public class TimeFormat {
 		if (hours == 12) {
 			h = 12;
 			amPm = "PM";
-		}
-		if (hours > 12) {
-			h = hours - 12;
-			amPm = "PM";
 		} else {
-			h = hours;
-			amPm = "AM";
+			if (hours > 12) {
+				h = hours - 12;
+				amPm = "PM";
+			} else {
+				h = hours;
+				amPm = "AM";
+			}
 		}
 		if (minutes < 10) {
 			System.out.println(h + ":0" + minutes + " " + amPm);
